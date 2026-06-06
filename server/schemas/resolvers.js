@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, QuizSet, QuizResult, TherapyNote } = require('../models');
+const { User, QuizSet, QuizResult, TherapyNote, Solution } = require('../models');
 const Recording = require('../models/Recording');
 const { signToken } = require('../utils/auth');
 
@@ -33,6 +33,10 @@ const resolvers = {
                 )
                 return therapyNote
             }
+        },
+        solutions: async (parent, { condition }, context) => {
+            const solutions = await Solution.find({ condition });
+            return solutions;
         }
     },
     Mutation: {

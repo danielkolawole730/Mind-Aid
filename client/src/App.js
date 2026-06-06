@@ -171,18 +171,22 @@ export default function App() {
     }
   ];
 
-  const listThree = [
-    {
-      text: 'Signup',
-      icon: <CreateIcon />,
-      link: '/signup',
-    },
-    {
-      text: 'Login',
-      icon: <LoginIcon />,
-      link: '/login',
-    }
-  ];
+  const listThree = Auth.loggedIn()
+    ? []
+    : [
+      {
+        text: 'Signup',
+        icon: <CreateIcon />,
+        link: '/signup',
+      },
+      {
+        text: 'Login',
+        icon: <LoginIcon />,
+        link: '/login',
+      }
+    ];
+
+  const isLoggedIn = Auth.loggedIn();
 
   return (
     <ApolloProvider client={client}>
@@ -272,14 +276,16 @@ export default function App() {
                       </Link>
                     )
                   })}
-                  <Link to={'/'} onClick={() => Auth.logout()} style={{ textDecoration: 'none' }}>
-                    <ListItem key='logout' disablePadding>
-                      <ListItemButton>
-                        {<LogoutIcon /> && <ListItemIcon sx={{ color: 'white' }}>{<LogoutIcon />}</ListItemIcon>}
-                        <ListItemText sx={{ color: 'white' }} primary={'Logout'} />
-                      </ListItemButton>
-                    </ListItem>
-                  </Link>
+                  {isLoggedIn && (
+                    <Link to={'/'} onClick={() => Auth.logout()} style={{ textDecoration: 'none' }}>
+                      <ListItem key='logout' disablePadding>
+                        <ListItemButton>
+                          <ListItemIcon sx={{ color: 'white' }}><LogoutIcon /></ListItemIcon>
+                          <ListItemText sx={{ color: 'white' }} primary={'Logout'} />
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
+                  )}
                 </List>
               </Box>
             </Drawer>

@@ -46,12 +46,24 @@ const typeDefs = gql`
         notes: String
     }
 
+    type Solution {
+        _id: ID
+        condition: String
+        title: String
+        summary: String
+        description: String
+        category: String
+        steps: [String]
+        resources: [String]
+        createdAt: String
+    }
 
     type Query {
         user: User
         quizSet(quizSetId: String): QuizSet
         recording(recordingId: String): Recording
         therapyNote(therapyNoteId: String): TherapyNote
+        solutions(condition: String!): [Solution]
     }
 
     type Mutation {

@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 import { Link } from 'react-router-dom'
 
 import HelpCard from "../components/Elements/HelpLineCard";
+import Solutions from "../components/Solutions";
 
 import { QUERY_QUIZSET } from "../utils/queries";
 
@@ -152,6 +153,11 @@ const Results = () => {
     return <div>Loading...</div>;
   }
 
+  // Extract positive conditions for solutions display
+  const positiveConditions = quiz.quizResults
+    ?.filter(result => result.quizAnswer.includes("positive"))
+    .map(result => result.quizTaken) || [];
+
   // console.log(quiz.quizResults)
 
   return (
@@ -160,6 +166,15 @@ const Results = () => {
       <div className={classes.container2}>
         {quiz.quizResults.map(quiz => <Child key={quiz.quizTaken} quiz={quiz} />)}
       </div>
+
+      {/* Display solutions for conditions with positive results */}
+      {positiveConditions.length > 0 && (
+        <div style={{ width: '100%' }}>
+          {positiveConditions.map(condition => (
+            <Solutions key={condition} condition={condition} />
+          ))}
+        </div>
+      )}
 
       <Button sx={{ borderColor: 'white', border: 1, fontSize: 30, backgroundColor: '#255070', marginBottom: 7 }}>
         <Link to='/quizselect' style={{ textDecoration: 'none', color: 'white', }}>

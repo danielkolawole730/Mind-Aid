@@ -57,3 +57,18 @@ query Notes {
     }
   }
 `;
+
+export const QUERY_SOLUTIONS = gql`
+  query Solutions($condition: String!) {
+    solutions(condition: $condition) {
+      _id
+      condition
+      title
+      summary
+      description
+      category
+      steps
+      resources
+    }
+  }
+`;

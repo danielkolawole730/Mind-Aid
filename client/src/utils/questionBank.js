@@ -39,6 +39,14 @@ const depressionQuestions = [ // an array of objects depressionQuestions[0].ques
         response: responseType.yesNo
     },
     {
+        question: "Are you having more trouble making decisions than usual?",
+        response: responseType.yesNo
+    },
+    {
+        question: "Have you lost interest in hobbies or activities you usually enjoy?",
+        response: responseType.yesNo
+    },
+    {
         question: "Do you have a poor appetite or are you overeating?",
         response: responseType.yesNo
     },
@@ -74,10 +82,13 @@ const ptsdQuestions = [
         response: responseType.yesNo
     },
     {
-        question: "Do you feel numb or detached from people, activities, or your surroundings?",
+        question: "Are reminders of a distressing event making you feel unsafe or panicked?",
         response: responseType.yesNo
     },
     {
+        question: "Do you feel numb or detached from people, activities, or your surroundings?",
+        response: responseType.yesNo
+    },    {
         question: "Do you feel guilty or unable to stop blaming yourself or others for a distressing events(s) or any problems the event(s) may have caused?",
         response: responseType.yesNo
     },
@@ -91,9 +102,9 @@ const schQuestions = [ // an array of objects
     { question: "Are you having trouble seeing things or are you seeing things that aren't there?", response: responseType.yesNo },
     { question: "Are you having trouble hearing things or are you hearing things that aren't there?", response: responseType.yesNo },
     { question: "Do you feel extremely tired?", response: responseType.yesNo },
+    { question: "Are you experiencing unusual or suspicious thoughts?", response: responseType.yesNo },
     // mood disorder
-    { question: "Are the happy thoughts speeding up your thought process?", response: responseType.yesNo },
-    { question: "Are the sad thoughts slowing down your thought process?", response: responseType.yesNo },
+    { question: "Are the happy thoughts speeding up your thought process?", response: responseType.yesNo },    { question: "Are the sad thoughts slowing down your thought process?", response: responseType.yesNo },
     { question: "Are you having any grandiose thoughts?", response: responseType.yesNo },
 ];
 
@@ -113,8 +124,9 @@ const addictionQuestions = [
     { question: "Are you feeling guilty about using substances?", response: responseType.yesNo },
     { question: "Is anyone annoying you by criticizing your substance use?", response: responseType.yesNo },
     { question: "Do you feel that your substance use significantly decreases your ability to function?", response: responseType.yesNo },
+    { question: "Have you found it difficult to stop using substances once you start?", response: responseType.yesNo },
     { question: "Are you using substances as soon as you wake up in the morning?", response: responseType.yesNo }
-] // 6 questions
+] // 7 questions
 
 const anxietyQuestions = [  // an array of objects GAD-7
     {
@@ -130,10 +142,13 @@ const anxietyQuestions = [  // an array of objects GAD-7
         response: responseType.yesNo
     },
     {
-        question: "Are you having trouble relaxing?",
+        question: "Do anxious thoughts ever stop you from focusing on daily tasks?",
         response: responseType.yesNo
     },
     {
+        question: "Are you having trouble relaxing?",
+        response: responseType.yesNo
+    },    {
         question: "Are you so restless that it is hard to sit still?",
         response: responseType.yesNo
     },
