@@ -1,8 +1,8 @@
 {
-  "name": "mental-health-check",
-  "version": "0.1.0",
+  "name": "mind-aid",
+  "version": "1.0.0",
   "engines": {
-    "node": "16.14.0"
+    "node": "20.x"
   },
   "description": "mental health check",
   "main": "server/server.js",
