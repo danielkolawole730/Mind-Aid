@@ -1,8 +1,8 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "mind-aid",
+  "version": "1.0.0",
   "engines": {
-    "node": "16.14.0"
+    "node": "20.x"
   },
   "private": true,
   "proxy": "http://localhost:3001/",
