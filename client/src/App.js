@@ -57,7 +57,7 @@ import Therapy from './pages/Therapy';
 import Auth from './utils/auth';
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: process.env.NODE_ENV === 'production' ? '/graphql' : 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
